@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Chat App</title>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/chatapp.css">
+    <script src="javascripts/jquery-1.11.2.js"></script>
+    <script src="javascripts/socket.io.js"></script>
+    <script src="javascripts/serializejson.js"></script>
+    <script src="javascripts/chat.js"></script>
+    <script src="javascripts/chat_ui.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>YOU'VE COME TO JUSTIN'S CHAT APP</h1>
+      <h2>PREPARE YOURSELF FIEND!</h2>
+      <h3>To message me</h3>
+      <h4>plz message me :(</h4>
+    </header>
+    <div class="room-info">
+      <section class="room"></section>
+      <section class="users">
+        Online Users:
+        <ul class="user-list group">
+
+        </ul>
+      </section>
+    </div>
+    <div class="self-info">
+      <section class="errors">
+
+      </section>
+      <section class="info">
+
+      </section>
+    </div>
+    <div class="chat">
+      <form class="new-message">
+        <input type="text" class="message-input" name="message" value="">
+        <button name="send" class="send">Send</button>
+      </form>
+      <ul class="messages group">
+
+      </ul>
+    </div>
+  </body>
+</html>
