@@ -12,10 +12,8 @@
   </head>
   <body>
     <header>
-      <h1>YOU'VE COME TO JUSTIN'S CHAT APP</h1>
-      <h2>PREPARE YOURSELF FIEND!</h2>
-      <h3>To message me</h3>
-      <h4>plz message me :(</h4>
+      <h1>Welcome to the Oh-Hai-There!</h1>
+      There is currently <strong class="num-of-users"></strong> users online!
     </header>
     <div class="room-info">
       <section class="room"></section>
@@ -37,6 +35,12 @@
     <div class="chat">
       <form class="new-message">
         <input type="text" class="message-input" name="message" value="">
+        <strong class="see-commands">/
+          <ul class="command-list">
+            <li><i class="command-type">/nick [nickname]</i> changes your nickname.</li>
+            <li><i class="command-type">/join [room name]</i> swaps your room to the specified room.</li>
+          </ul>
+        </strong>
         <button name="send" class="send">Send</button>
       </form>
       <ul class="messages group">

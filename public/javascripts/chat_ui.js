@@ -5,6 +5,7 @@ $(function () {
   var $info = $('.info');
   var $userList = $('.user-list');
   var $roomTitle = $('.room');
+  var $numOfUsers = $('.num-of-users')
   var socket = io();
   var chat = new ChatApp.Chat({socket: socket, $messages: $messages});
 
@@ -16,8 +17,22 @@ $(function () {
     $form.children('input')[0].focus();
   });
 
+  $('.user-list').on('mouseenter', '.online-user', function (event) {
+    $target = $(event.currentTarget);
+    var id = $target.data('id');
+    console.log(id)
+    $('.name[data-id="' + id + '"]').addClass('online-user-hover');
+  })
+
+  $('.user-list').on('mouseleave', '.online-user', function (event) {
+    $target = $(event.currentTarget);
+    var id = $target.data('id');
+    $('.name[data-id="' + id + '"]').removeClass('online-user-hover');
+  })
+
   socket.on('recieveMessage', function (data) {
-    chat.renderMessage(data.text, data.name, data.time, data.date);
+    console.log(data)
+    chat.renderMessage(data.text, data.name, data.time, data.date, data.id);
   });
 
   socket.on('nicknameChangeResult', function (data) {
@@ -33,9 +48,10 @@ $(function () {
   socket.on('displayList', function (data) {
     $userList.empty();
     $.each(data.names, function (num) {
-      var $li = $('<li>');
+      var $li = $('<li class="online-user">');
       $li.text(data.names[num]);
-      $userList.append($li)
+      $li.data('id', num);
+      $userList.append($li);
     })
   });
 
@@ -43,4 +59,8 @@ $(function () {
     $roomTitle.text(data.room);
     $info.text(data.message);
   });
+
+  socket.on('updateNumOfUsers', function (data) {
+    $numOfUsers.html(data.num);
+  })
 });

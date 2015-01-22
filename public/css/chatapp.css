@@ -53,7 +53,7 @@ ul.user-list, ul.messages {
   border-radius: 5px;
 }
 
-ul.user-list li {
+.online-user {
   background-color: #DEF5FF;
   border: 1px solid #91B1BF;
   width: 234px;
@@ -62,10 +62,15 @@ ul.user-list li {
   float: left;
   margin: 5px 0;
   border-radius: 5px;
+  cursor: default;
 }
 
-ul.user-list li:nth-child(2n+1) {
+.online-user:nth-child(2n+1) {
   margin-right: 10px;
+}
+
+.online-user:hover {
+  background-color: #D0F0F0;
 }
 
 .info, .errors {
@@ -76,8 +81,12 @@ ul.user-list li:nth-child(2n+1) {
   color: #f00;
 }
 
+.chat {
+  overflow-x: visible;
+}
+
 .message-input {
-  width: 396px;
+  width: 365px;
   background-color: #fff;
   border: 1px solid #000;
   padding: 5px 10px;
@@ -85,7 +94,7 @@ ul.user-list li:nth-child(2n+1) {
   box-sizing: border-box;
 }
 
-.send {
+.send, .see-commands {
   width: 100px;
   background-color: #4D6DFF;
   color: #fff;
@@ -104,9 +113,46 @@ ul.user-list li:nth-child(2n+1) {
   box-shadow: 2px 2px 2px black;
 }
 
+.see-commands {
+  width: 30px;
+  position: relative;
+  cursor: default;
+}
+
+.see-commands:hover .command-list {
+  display: block;
+}
+
+.command-list {
+  display: none;
+  position: absolute;
+  width: 300px;
+  background: #333;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  font-weight: normal;
+  padding: 5px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.command-type {
+  padding-right: 5px;
+  padding-left: 10px;
+}
+
+.messages {
+  height: 300px;
+  overflow-y: scroll;
+}
+
 .messages li {
   position: relative;
   border-radius: 5px;
+  padding: 2px 5px;
 }
 
 .messages li:hover {
@@ -116,27 +162,35 @@ ul.user-list li:nth-child(2n+1) {
 .messages li:hover:before {
   display: block;
   position: absolute;
-  transform: translateX(-100%);
-  left: -10px;
-  top: -5px;
+  right: 0px;
+  top: 100%;
   background: black;
   color: #fff;
   border-radius: 5px;
   content: attr(data-time);
   padding: 5px 10px;
+  z-index: 100;
 }
 
 .messages li:active:before {
   display: block;
   position: absolute;
-  transform: translateX(-100%);
-  left: -10px;
-  top: -5px;
+  right: 0px;
+  top: 100%;
   background: black;
   color: #fff;
   border-radius: 5px;
   content: attr(data-date);
   padding: 5px 10px;
+  z-index: 100;
+}
+
+.name {
+  letter-spacing: 1px;
+}
+
+.online-user-hover {
+  color: #04f;
 }
 
 .group:after {
