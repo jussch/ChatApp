@@ -11,41 +11,44 @@
     <script src="javascripts/chat_ui.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Welcome to the Oh-Hai-There!</h1>
-      There is currently <strong class="num-of-users"></strong> users online!
-    </header>
-    <div class="room-info">
-      <section class="room"></section>
-      <section class="users">
-        Online Users:
-        <ul class="user-list group">
+    <div class="gloss-effect"></div>
+    <div class="content">
+      <header>
+        <h1>Welcome to the Oh-Hai-There!</h1>
+        There is currently <strong class="num-of-users"></strong> users online!
+      </header>
+      <div class="room-info">
+        <section class="room"></section>
+        <section class="users">
+          Online Users:
+          <ul class="user-list group">
+
+          </ul>
+        </section>
+      </div>
+      <div class="self-info">
+        <section class="errors">
+
+        </section>
+        <section class="info">
+
+        </section>
+      </div>
+      <div class="chat">
+        <form class="new-message">
+          <input type="text" class="message-input" name="message" value="">
+          <strong class="see-commands">/
+            <ul class="command-list">
+              <li><i class="command-type">/nick [nickname]</i> changes your nickname.</li>
+              <li><i class="command-type">/join [room name]</i> swaps your room to the specified room.</li>
+            </ul>
+          </strong>
+          <button name="send" class="send">Send</button>
+        </form>
+        <ul class="messages group">
 
         </ul>
-      </section>
-    </div>
-    <div class="self-info">
-      <section class="errors">
-
-      </section>
-      <section class="info">
-
-      </section>
-    </div>
-    <div class="chat">
-      <form class="new-message">
-        <input type="text" class="message-input" name="message" value="">
-        <strong class="see-commands">/
-          <ul class="command-list">
-            <li><i class="command-type">/nick [nickname]</i> changes your nickname.</li>
-            <li><i class="command-type">/join [room name]</i> swaps your room to the specified room.</li>
-          </ul>
-        </strong>
-        <button name="send" class="send">Send</button>
-      </form>
-      <ul class="messages group">
-
-      </ul>
+      </div>
     </div>
   </body>
 </html>

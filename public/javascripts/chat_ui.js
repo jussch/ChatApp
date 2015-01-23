@@ -20,7 +20,6 @@ $(function () {
   $('.user-list').on('mouseenter', '.online-user', function (event) {
     $target = $(event.currentTarget);
     var id = $target.data('id');
-    console.log(id)
     $('.name[data-id="' + id + '"]').addClass('online-user-hover');
   })
 
@@ -31,7 +30,6 @@ $(function () {
   })
 
   socket.on('recieveMessage', function (data) {
-    console.log(data)
     chat.renderMessage(data.text, data.name, data.time, data.date, data.id);
   });
 

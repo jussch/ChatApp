@@ -19,14 +19,33 @@ body {
   background-color: #217194;
 }
 
+.gloss-effect {
+  display: block;
+  position: fixed;
+  background: linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.5));
+  opacity: 0.5;
+  height: 500px;
+  border-radius: 50%;
+  top: -250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 header, .room-info, .chat, .self-info {
   display: block;
   margin: 10px auto;
   padding: 20px;
   width: 500px;
   background-color: #eee;
-  border: 1px solid #ccc;
+  border: 1px solid #666;
   border-radius: 5px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
 h1 {
